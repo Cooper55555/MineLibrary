@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+
+      <nav id="main-navbar" class="navbar">
+      <a href="https://cooper55555.github.io/DataLibrary/" class="navbar-logo">DataLibrary</a>
+      <div class="navbar-links">
+        <button class="nav-btn active" data-section="first-section">PROFILE</button>
+        <button class="nav-btn" data-section="second-section">SERVERS</button>
+      </div>
+    </nav>
+
+<div id="first-section" class="section">
+  <div class="settings-container">
+    <i class="fas fa-cog settings-icon" onclick="toggleTCGSettingsModal()"></i>
+  </div>
+  <div class="container-unique">
+  <h1 class="heading-unique">Minecraft Profile</h1>
+  <input type="text" id="username" class="input-unique" placeholder="Enter Minecraft Username.." />
+  <button class="button-unique" onclick="lookupPlayer()">Search</button>
+
+  <div id="result" class="result-unique">
+    <div class="grid-unique">
+      <div class="skin-section-unique">
+        <img id="skin" alt="Minecraft Skin" class="skin-img-unique" />
+        <a id="downloadSkinBtn" download="skin.png">Download Skin</a>
+      </div>
+
+      <div class="info-section-unique">
+        <p><strong>Username:</strong> <span id="name" class="name-unique"></span></p>
+
+        <div class="extra-info-unique" id="extraInfo"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="second-section" class="section" style="display:none;">
+  <div class="settings-container">
+    <i class="fas fa-cog settings-icon" onclick="toggleTCGSettingsModal()"></i>
+  </div>
+  <h1>COMING SOON...</h1>
+</div>
+  
+    <div id="settings-modal-tcg" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-button" onclick="toggleTCGSettingsModal()">×</span>
+    <h2>Settings</h2>
+
+    <div class="switch-container">
+      <label class="switch">
+        <input
+          type="checkbox"
+          id="darkModeToggleModal"
+        />
+        <span class="slider"></span>
+      </label>
+      <span>Dark Mode</span>
+    </div>
+
+    <div class="social-button-container">
+      <a
+        href="https://discord.gg/t5BGDzzSXg"
+        target="_blank"
+        class="social-button discord"
+        ><i class="fab fa-discord"></i
+      ></a>
+      <a
+        href="https://median.co/share/jrkxbe#apk"
+        target="_blank"
+        class="social-button android"
+        ><i class="fab fa-android"></i
+      ></a>
+    </div>
+  </div>
+</div>
+
+    <div class="copyright-container">
+    <h5>© 2025 DataLibrary. This website has been made by Cooper and Pepper.</h5>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>
