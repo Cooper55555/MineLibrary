@@ -156,3 +156,29 @@ function syncToggleWithDarkMode() {
     darkModeToggleModal.checked = document.body.classList.contains("dark-mode");
   }
 }
+
+const mslSearchInputField = document.getElementById('msl-search-input');
+const mslAllServerCards = document.querySelectorAll('.msl-server-card');
+
+mslSearchInputField.addEventListener('input', () => {
+    const mslSearchQuery = mslSearchInputField.value.toLowerCase();
+
+    mslAllServerCards.forEach(mslCardElement => {
+      const mslServerTitle = mslCardElement.querySelector('.msl-server-name').textContent.toLowerCase();
+      const mslServerText = mslCardElement.querySelector('.msl-server-description').textContent.toLowerCase();
+
+      const mslMatchesSearch = mslServerTitle.includes(mslSearchQuery) || mslServerText.includes(mslSearchQuery);
+
+      mslCardElement.style.display = mslMatchesSearch ? '' : 'none';
+    });
+});
+
+document.querySelectorAll('.msl-copy-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const ip = button.getAttribute('data-ip');
+      navigator.clipboard.writeText(ip).then(() => {
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = "Copy IP", 1500);
+      });
+    });
+});
