@@ -12,20 +12,31 @@
 </head>
 <body>
 
-      <nav id="main-navbar" class="navbar">
-      <a href="https://cooper55555.github.io/DataLibrary/" class="navbar-logo">DataLibrary</a>
+          <nav id="main-navbar" class="navbar">
+      <a href="https://cooper55555.github.io/DataLibrary/" class="navbar-logo" style="text-decoration: none;">
+        <div class="logo-container">
+          <i class="fas fa-database logo-icon"></i>
+          <span class="logo-text">DataLibrary</span>
+        </div>
+      </a>
       <div class="navbar-links">
-        <button class="nav-btn active" data-section="first-section">PROFILE</button>
-        <button class="nav-btn" data-section="second-section">SERVERS</button>
+        <button class="nav-btn active" data-section="first-section">
+          <i class="fas fa-solid fa-user"></i>
+          <span>PROFILE</span>
+        </button>
+        <button class="nav-btn" data-section="second-section">
+          <i class="fas fa-solid fa-mug-hot"></i>
+          <span>SERVERS</span>
+        </button>
+        <div class="navbar-settings">
+          <i class="fas fa-cog settings-icon" onclick="toggleTCGSettingsModal()"></i>
+        </div>
       </div>
     </nav>
 
 <div id="first-section" class="section">
-  <div class="settings-container">
-    <i class="fas fa-cog settings-icon" onclick="toggleTCGSettingsModal()"></i>
-  </div>
+  <h1 class="main-title">Minecraft Profile</h1>
   <div class="container-unique">
-  <h1 class="heading-unique">Minecraft Profile</h1>
   <input type="text" id="username" class="input-unique" placeholder="Enter Minecraft Username.." />
   <button class="button-unique" onclick="lookupPlayer()">Search</button>
 
@@ -33,7 +44,7 @@
     <div class="grid-unique">
       <div class="skin-section-unique">
         <img id="skin" alt="Minecraft Skin" class="skin-img-unique" />
-        <a id="downloadSkinBtn" download="skin.png">Download Skin</a>
+        <a id="downloadSkinBtn" download="skin.png" class="msl-download-button">Download Skin</a>
       </div>
 
       <div class="info-section-unique">
@@ -46,12 +57,9 @@
 </div>
 </div>
 
-<div id="second-section" class="section" style="display:none;">
-  <div class="settings-container">
-    <i class="fas fa-cog settings-icon" onclick="toggleTCGSettingsModal()"></i>
-  </div>
+  <div id="second-section" class="section" style="display:none;">
+    <h1 class="main-title">Minecraft Servers</h1>
   <div class="msl-wrapper">
-  <h1 class="msl-title">Minecraft Servers</h1>
 
   <div class="msl-search">
     <input type="text" placeholder="Search For A Server.." id="msl-search-input">
