@@ -132,24 +132,32 @@ function toggleTCGSettingsModal() {
 const darkModeToggleModal = document.getElementById("darkModeToggleModal");
 
 const savedDarkMode = localStorage.getItem("darkMode") === "enabled";
-if (savedDarkMode) {
-  document.body.classList.add("dark-mode");
-  if (darkModeToggleModal) darkModeToggleModal.checked = true;
-} else {
-  if (darkModeToggleModal) darkModeToggleModal.checked = false;
-}
+function initializeDarkMode() {
+  const savedDarkMode = localStorage.getItem("darkMode");
 
-if (darkModeToggleModal) {
-  darkModeToggleModal.addEventListener("change", () => {
-    if (darkModeToggleModal.checked) {
-      document.body.classList.add("dark-mode");
-      localStorage.setItem("darkMode", "enabled");
-    } else {
-      document.body.classList.remove("dark-mode");
+  if (savedDarkMode === "enabled") {
+    document.body.classList.add("dark-mode");
+    if (darkModeToggleModal) darkModeToggleModal.checked = true;
+  } else {
+    document.body.classList.remove("dark-mode");
+    if (darkModeToggleModal) darkModeToggleModal.checked = false;
+    // If darkMode was enabled before, but now the user wants light mode, reset it
+    if (savedDarkMode === "enabled") {
       localStorage.setItem("darkMode", "disabled");
     }
-  });
+  }
+
+  if (darkModeToggleModal) {
+    darkModeToggleModal.addEventListener("change", () => {
+      const isChecked = darkModeToggleModal.checked;
+      document.body.classList.toggle("dark-mode", isChecked);
+      localStorage.setItem("darkMode", isChecked ? "enabled" : "disabled");
+    });
+  }
 }
+
+// Call it on load
+initializeDarkMode();
 
 function syncToggleWithDarkMode() {
   if (darkModeToggleModal) {
