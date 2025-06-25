@@ -324,8 +324,9 @@ body.dark-mode .modal-content {
 
 /* Profile Section */
 .container-unique {
+  background: var(--glass-light);
   max-width: 700px;
-  margin: 0 auto;
+  margin: 20px auto;
   border-radius: 16px;
   padding: 2rem;
 }
@@ -333,7 +334,7 @@ body.dark-mode .modal-content {
 .heading-unique {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
   color: var(--orange);
 }
@@ -551,7 +552,13 @@ body.dark-mode .msl-server-players {
     display: none;
   }
   
-
+.container-unique {
+  background: var(--glass-light);
+  max-width: 700px;
+  margin: 2rem 1rem auto !important;
+  border-radius: 16px;
+  padding: 2rem;
+}
 
   .button-unique {
   padding: 0.9rem 2rem;
@@ -565,6 +572,8 @@ body.dark-mode .msl-server-players {
   user-select: none;
   margin: 8px auto;
   display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .section {
