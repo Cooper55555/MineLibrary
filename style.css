@@ -331,6 +331,14 @@ body.dark-mode .modal-content {
   padding: 2rem;
 }
 
+.dark-mode .container-unique {
+  background: var(--glass-dark);
+  max-width: 700px;
+  margin: 20px auto;
+  border-radius: 16px;
+  padding: 2rem;
+}
+
 .heading-unique {
   font-size: 2rem;
   font-weight: 700;
