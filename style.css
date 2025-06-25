@@ -397,18 +397,7 @@ body.dark-mode .input-unique {
   outline-offset: 2px;
 }
 
-/* Dark mode media query fallback */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--bg-gradient-dark);
-    color: var(--text-dark);
-  }
-  .msl-wrapper {
-    background: var(--bg-gradient-dark);
-    color: var(--text-dark);
-  }
-}
-
+  
 /* Server List Section */
 .msl-wrapper {
   max-width:1000px;
